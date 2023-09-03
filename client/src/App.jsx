@@ -24,7 +24,7 @@ function App() {
 
   const getAllStations = async () => {
     try {
-      const response = await axios.post('http://localhost:8080/api/v1/radio/stations/all', {
+      const response = await axios.post('https://radio-earth-server.onrender.com/api/v1/radio/stations/all', {
         responseLimit
       });
 
@@ -38,7 +38,7 @@ function App() {
 
   const getStations = async () => {
     try {
-      const response = await axios.post('http://localhost:8080/api/v1/radio/stations', {
+      const response = await axios.post('https://radio-earth-server.onrender.com/api/v1/radio/stations', {
         requestType: stationFilterType,
         requestValue: stationFilter,
         responseLimit
