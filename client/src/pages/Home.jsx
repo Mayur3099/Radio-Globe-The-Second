@@ -2,14 +2,13 @@ import React, { useEffect, useState, useRef } from 'react';
 import Globe from "react-globe.gl";
 
 import { Earth, FilterPopUp, AudioPlayer, SearchBar } from '../components';
-import { filters } from '../assets';
 
-const Home = ({ stations }) => {
+
+const Home = ({ stations, stationFilter, setStationFilter, setStationFilterType, stationFilterType }) => {
     const [showPlayer, setShowPlayer] = useState(false);
 
     const [points, setPoints] = useState();
 
-    const [stationFilter, setStationFilter] = useState("all");
     const [selectedStation, setSelectedStation] = useState({
         urlResolved: "https://stream.0nlineradio.com/christmas?ref=radiobrowser"
     });
@@ -22,11 +21,11 @@ const Home = ({ stations }) => {
     useEffect(() => {
         setPoints(stations.map(item => {
             return {
-                lat: item.geoLat,
-                lng: item.geoLong,
+                currentStation: item,
+                lat: item.geo_lat,
+                lng: item.geo_long,
                 size: 5,
                 color: "red",
-                currentStation: item
             }
         }));
     }, [stations]);
@@ -41,6 +40,7 @@ const Home = ({ stations }) => {
         e.preventDefault();
 
         setSearch(true);
+        setStationFilter(searchText);
     }
 
     const handleChange = (e) => {
@@ -57,10 +57,17 @@ const Home = ({ stations }) => {
                     <h1 className='font-bold'>Choose Amongst these amazing filters</h1>
                 </div>
 
-                <FilterPopUp filters={filters} />
+                <FilterPopUp stationFilter={stationFilter} setStationFilter={setStationFilter} setStationFilterType={setStationFilterType} />
 
                 <div className='z-10 absolute w-1/4 mx-auto mt-10 mr-10 right-0'>
-                    <SearchBar />
+                    <SearchBar
+                        searchText={searchText}
+                        setSearchText={setSearchText}
+                        handleChange={handleChange}
+                        handleSubmit={handleSubmit}
+                        setStationFilterType={setStationFilterType}
+                        stationFilterType={stationFilterType}
+                    />
                 </div>
 
                 <div className='flex justify-center z-5'>

@@ -28,7 +28,7 @@ const RadioCard = ({ station, index }) => {
                 <div className='absolute inset-x-0 bottom-0'>
                     <AudioPlayerReact
                         className='rounded-b-xl'
-                        src={station.urlResolved}
+                        src={station.url_resolved}
                         showJumpControls={false}
                         layout="stacked"
                         customProgressBarSection={[]}

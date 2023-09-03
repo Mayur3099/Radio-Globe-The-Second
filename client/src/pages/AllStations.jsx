@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { RadioCard } from '../components';
+import { Link } from 'react-router-dom';
 
 const AllStations = ({ stations }) => {
     return (
@@ -20,7 +21,7 @@ const AllStations = ({ stations }) => {
             </div>
 
             <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-            <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a class="hover:underline hover:cursor-pointer hover:text-teal-600">RadioEarth</a>. All Rights Reserved.</span>
+            <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <Link to='/' class="hover:underline hover:cursor-pointer hover:text-teal-600">RadioEarth</Link>. All Rights Reserved.</span>
         </div>
     )
 }

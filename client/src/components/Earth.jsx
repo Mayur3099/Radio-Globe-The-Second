@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import Globe from "react-globe.gl";
 
-import { earthUvMap, nightEarthUvMap } from '../assets';
+import { earthUvMap, nightEarthUvMap, earthBrightClouds } from '../assets';
 
 const Earth = ({ points, handlePointClick }) => {
 	const globeRef = useRef();
@@ -24,7 +24,7 @@ const Earth = ({ points, handlePointClick }) => {
 
 						ref={globeRef}
 
-						globeImageUrl={earthUvMap}
+						globeImageUrl={earthBrightClouds}
 						backgroundImageUrl={nightEarthUvMap}
 
 						pointsData={points}

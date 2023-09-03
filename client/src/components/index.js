@@ -4,6 +4,7 @@ import RadioCard from "./RadioCard";
 import FilterPopUp from "./FilterPopUp";
 import AudioPlayer from "./AudioPlayer";
 import SearchBar from "./SearchBar";
+import FilterTypePopUp from "./FilterTypePopUp";
 
 export {
     NavBar,
@@ -12,4 +13,5 @@ export {
     FilterPopUp,
     AudioPlayer,
     SearchBar,
+    FilterTypePopUp,
 }

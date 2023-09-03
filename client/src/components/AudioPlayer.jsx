@@ -18,7 +18,7 @@ const AudioPlayer = ({ selectedStation }) => {
                         className="flex h-24 px-8 appearance-none bg-transparent text-sm text-gray-900 bg-opacity-0 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-opacity-0 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 
                         autoPlay={false}
-                        src={selectedStation.urlResolved}
+                        src={selectedStation.url_resolved}
                         layout='stacked'
                     />
                 </div>
